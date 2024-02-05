@@ -6,5 +6,5 @@
 - Output "outdir" is where the plots are save
 
 #### Example output:
-![Example plot]([image_url](https://github.com/DHersh3094/Galaxy-Watch-6-Scripts/blob/main/February%2005%2C%202024_heart_rate.png)https://github.com/DHersh3094/Galaxy-Watch-6-Scripts/blob/main/February%2005%2C%202024_heart_rate.png)
+![Example plot](https://github.com/DHersh3094/Galaxy-Watch-6-Scripts/blob/main/February%2005%2C%202024_heart_rate.png)https://github.com/DHersh3094/Galaxy-Watch-6-Scripts/blob/main/February%2005%2C%202024_heart_rate.png)
 
