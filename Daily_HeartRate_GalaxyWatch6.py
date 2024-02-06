@@ -72,7 +72,7 @@ for day in heart_rate.day.unique():
 
     # Shade along the x-axis for workout data
     full_ymin, full_ymax = plt.gca().get_ylim()
-    ax.fill_between(workout_data.start_time, full_ymin, full_ymax, alpha=0.15, color='green', label='Exercise', where=(workout_data.speed > 0))
+    ax.vlines(workout_data.start_time, full_ymin, full_ymax, color='g', alpha=.3, label='Exercise')
 
     plt.gca().xaxis.set_major_formatter(date_format)
     plt.title(day)
