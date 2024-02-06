@@ -46,6 +46,11 @@ workouts['start_time'] = workouts['start_time'] + dt.timedelta(hours=1)
 workouts = workouts[workouts.speed > 0]
 workouts['day'] = workouts['start_time'].dt.strftime('%B %d, %Y')
 
+# Manual workouts have sub-minute sampling. To draw vlines that don't overlap, I only want one row per minute
+# Auto workouts already have one row per minute
+workouts['minute'] = workouts['start_time'].dt.floor('T')
+workouts = workouts.groupby('minute').first().reset_index()
+
 for day in heart_rate.day.unique():
     data = heart_rate[heart_rate.day == day]
     workout_data = workouts[workouts.day == day]
@@ -59,7 +64,7 @@ for day in heart_rate.day.unique():
                     data.heart_rate_max,
                     color='gray',
                     alpha=0.5,
-                    label='Envelope')
+                    label='Min/Max')
     ax.set_ylabel('Heart rate (bpm)')
     ax.set_xlabel('Time of day')
 
